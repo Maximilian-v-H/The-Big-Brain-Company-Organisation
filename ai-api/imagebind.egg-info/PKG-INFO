@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: imagebind
+Version: 0.1.0
+Summary: A brief description of the package
+Home-page: https://github.com/facebookresearch/ImageBind
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+Description-Content-Type: text/markdown
+Requires-Dist: annotated-types==0.6.0
+Requires-Dist: anyio==3.7.1
+Requires-Dist: click==8.1.7
+Requires-Dist: dnspython==2.4.2
+Requires-Dist: email-validator==2.1.0.post1
+Requires-Dist: fastapi==0.104.1
+Requires-Dist: h11==0.14.0
+Requires-Dist: idna==3.4
+Requires-Dist: motor==3.3.1
+Requires-Dist: pydantic==2.4.2
+Requires-Dist: pydantic-core==2.10.1
+Requires-Dist: pymongo==4.5.0
+Requires-Dist: sniffio==1.3.0
+Requires-Dist: starlette==0.27.0
+Requires-Dist: typing-extensions==4.8.0
+Requires-Dist: uvicorn==0.23.2
+Requires-Dist: torch==1.13.0
+Requires-Dist: torchvision==0.14.0
+Requires-Dist: torchaudio==0.13.0
+Requires-Dist: pytorchvideo@ git+https://github.com/facebookresearch/pytorchvideo.git@28fe037d212663c6a24f373b94cc5d478c8c1a1d
+Requires-Dist: timm==0.6.7
+Requires-Dist: ftfy
+Requires-Dist: regex
+Requires-Dist: einops
+Requires-Dist: fvcore
+Requires-Dist: iopath
+Requires-Dist: numpy>=1.19
+Requires-Dist: matplotlib
+Requires-Dist: types-regex
+Requires-Dist: cartopy
+
+# Imagebind description
