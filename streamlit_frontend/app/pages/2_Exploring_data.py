@@ -13,7 +13,7 @@ with tab1:
         with st.echo():
             m = leafmap.Map()
             m.split_map(
-                left_layer='C:/Users/Jonas/Programming/FastAPI/assets/barea2006_bra.tif', right_layer='C:/Users/Jonas/Programming/FastAPI/assets/barea2011_bra.tif'
+                left_layer='assets/barea2006_bra.tif', right_layer='assets/barea2011_bra.tif'
             )
             m.add_legend(title='ESA Land Cover', builtin_legend='ESA_WorldCover')
 

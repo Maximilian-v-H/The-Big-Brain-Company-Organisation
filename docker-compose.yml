@@ -1,5 +1,13 @@
 version: '3'
 services:
+  streamlit:
+    build: ./streamlit_frontend
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - $STREAMLIT_LOCAL_PORT:$STREAMLIT_DOCKER_PORT
+    environment:
+      - PORT=$STREAMLIT_DOCKER_PORT
   ai_api:
     depends_on:
       - mongodb

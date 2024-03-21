@@ -19,7 +19,7 @@ def introduction():
     
     
     st.markdown("""---""") 
-    st.image('C:/Users/Jonas/Programming/FastAPI/assets/icons.png', caption='Cooperation Partners')
+    st.image('assets/icons.png', caption='Cooperation Partners')
 
 
 def about_us():

@@ -3,7 +3,7 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 st.title("Explore how AI can help identify wildfires")
-st.image('C:/Users/Jonas/Programming/FastAPI/assets/image_recog.png', caption='Simplified process of a computer vision model.')
+st.image('assets/image_recog.png', caption='Simplified process of a computer vision model.')
 
 # Start the quiz
 with st.expander("Try it yourself"):
