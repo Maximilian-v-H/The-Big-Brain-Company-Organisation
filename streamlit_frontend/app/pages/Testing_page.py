@@ -1,8 +1,18 @@
 import ee
 import geemap.foliumap as geemap
 
-ee.Authenticate()
-ee.Initialize(project='starthack-417820')
+import ee
+import streamlit as st
+from google.oauth2 import service_account
+
+SCOPES = ['https://www.googleapis.com/auth/earthengine',
+          'https://www.googleapis.com/auth/devstorage.read_write']
+SERVICE_ACCOUNT_FILE = '../starthack-417820-456004745901.json'
+
+credentials = service_account.Credentials.from_service_account_file(
+        SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+ee.Initialize(credentials)
+
 Map = geemap.Map(center=[-10, -55], zoom=4)
 Map.to_streamlit(height=700)
 a = """
