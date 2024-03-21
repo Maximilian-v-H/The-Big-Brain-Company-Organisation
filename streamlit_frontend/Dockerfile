@@ -16,5 +16,5 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD ["tail", "-f", "/dev/null"]
-# CMD streamlit run --server.port $PORT app.py
+# CMD ["tail", "-f", "/dev/null"]
+CMD streamlit run --server.port $PORT app/Start.py
