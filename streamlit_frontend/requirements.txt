@@ -1,0 +1,5 @@
+pkg_resources
+geemap
+streamlit
+ee
+rasterio
