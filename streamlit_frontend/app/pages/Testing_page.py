@@ -7,7 +7,7 @@ from google.oauth2 import service_account
 
 SCOPES = ['https://www.googleapis.com/auth/earthengine',
           'https://www.googleapis.com/auth/devstorage.read_write']
-SERVICE_ACCOUNT_FILE = '../starthack-417820-456004745901.json'
+SERVICE_ACCOUNT_FILE = 'starthack-417820-456004745901.json'
 
 credentials = service_account.Credentials.from_service_account_file(
         SERVICE_ACCOUNT_FILE, scopes=SCOPES)
