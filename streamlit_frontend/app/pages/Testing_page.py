@@ -1,7 +1,4 @@
-import streamlit as st
-import geemap
 import ee
-import leafmap
 import geemap.foliumap as geemap
 
 ee.Authenticate()

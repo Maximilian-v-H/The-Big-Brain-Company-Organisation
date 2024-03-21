@@ -1,7 +1,5 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
-from streamlit_folium import folium
-from streamlit_folium import folium_static
 import geemap
 import ee
 
