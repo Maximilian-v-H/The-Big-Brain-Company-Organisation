@@ -5,3 +5,4 @@ streamlit
 rasterio
 geemap
 leafmap
+streamlit_image_comparison
