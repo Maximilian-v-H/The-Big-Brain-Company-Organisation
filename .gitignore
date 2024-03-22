@@ -48,4 +48,3 @@ app.*.map.json
 # mongo db
 mongo-db/journal
 mongo-db/diagnostic.data
-starthack-417820-456004745901.json

@@ -5,8 +5,15 @@ import ee
 
 st.set_page_config(layout="wide")
 st.title("Now that we understand the implications of wildfires, lets see what we can do to help prevent them ")
-ee.Authenticate()
-ee.Initialize(project='starthack-417820')
+from google.oauth2 import service_account
+
+SCOPES = ['https://www.googleapis.com/auth/earthengine',
+          'https://www.googleapis.com/auth/devstorage.read_write']
+SERVICE_ACCOUNT_FILE = 'starthack-417820-456004745901.json'
+
+credentials = service_account.Credentials.from_service_account_file(
+    SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+ee.Initialize(credentials)
 # Load MODIS land cover images for multiple years
 
 # Define the dataset and filter by date
