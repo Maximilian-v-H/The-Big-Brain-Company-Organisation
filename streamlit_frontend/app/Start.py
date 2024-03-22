@@ -25,7 +25,7 @@ def introduction():
 def about_us():
     st.header("About Us")
     st.write("""
-    -> We could add some stuff about G20 Land Initiative or Links etc. here <-
+    4 motivated students from Germany, who are passionate about data science and the environment, have come together to create this interactive learning experience.
     """)
 
 # Main app
