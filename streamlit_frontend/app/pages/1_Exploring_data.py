@@ -100,7 +100,7 @@ with tab2:
     # Use the second column to display the GIF
     with col2:
         st.markdown("### Disaster in 20 years: Loss of humid forest (green), replaced by Savanna (yellow)")
-        file_ = open("assets/savanna.gif", "rb")
+        file_ = open("assets/landUsage.gif", "rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
         file_.close()
