@@ -1,24 +1,16 @@
-import ee
-import geemap.foliumap as geemap
-
-import ee
 import streamlit as st
-from google.oauth2 import service_account
+from streamlit_folium import folium_static
+import geemap.foliumap as geemap
+import ee
 
-SCOPES = ['https://www.googleapis.com/auth/earthengine',
-          'https://www.googleapis.com/auth/devstorage.read_write']
-SERVICE_ACCOUNT_FILE = 'starthack-417820-456004745901.json'
+st.set_page_config(layout="wide")
+st.title("Now that we understand the implications of wildfires, lets see what we can do to help prevent them ")
+ee.Authenticate()
+ee.Initialize(project='starthack-417820')
+# Load MODIS land cover images for multiple years
 
-credentials = service_account.Credentials.from_service_account_file(
-        SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-ee.Initialize(credentials)
-
-Map = geemap.Map(center=[-10, -55], zoom=4)
-Map.to_streamlit(height=700)
-a = """
-brazil_shapefile = geemap.shp_to_ee('Task2/Brazil/Brazil/Brazil.shp')
 # Define the dataset and filter by date
-dataset = ee.ImageCollection('MODIS/061/MCD64A1').filter(ee.Filter.date('2003-01-01', '2018-05-01'))
+dataset = ee.ImageCollection('MODIS/061/MCD64A1').filter(ee.Filter.date('2017-01-01', '2018-05-01'))
 burnedArea = dataset.select('BurnDate')
 
 # A FeatureCollection defining Brazil boundary.
@@ -43,9 +35,9 @@ Map = geemap.Map(center=[-10, -55], zoom=4)
 
 # Add burned area layer to the map
 Map.addLayer(ba_clip, burnedAreaVis, 'Burned Area')
-Map.addLayer(brazil_shapefile, name='Brazil',opacity=0.5)
+Map.addLayer('https://starthack2024-g20-13579.s3.eu-central-1.amazonaws.com/Brazil.shp'
+, name='Brazil',opacity=0.5)
 Map.addLayerControl()
 
 # Display the map
-Map.to_streamlit(height=700)
-"""
+Map.to_streamlit()
