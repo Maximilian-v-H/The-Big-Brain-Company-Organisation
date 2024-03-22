@@ -1,5 +1,4 @@
 import streamlit as st
-import leafmap.foliumap as leafmap
 import geemap.foliumap as geemap
 import ee
 from map_generation.population_affected import population_affected_map
