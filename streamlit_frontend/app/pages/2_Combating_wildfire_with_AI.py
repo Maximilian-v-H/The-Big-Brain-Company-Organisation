@@ -17,7 +17,7 @@ st.write(
     "If we equip drones with these models, or process images from drones with it - we can speed up the process of discovering and acting upon wildfires - potentially saving thousands of hectares of land.")
 
 st.write("")
-st.write("## Try it yourself - Upload a picture and see if the fire will be detected.")
+st.write("## Try it yourself - Upload a picture and see if the fire will be detected. (Feature not added yet!)")
 # Start the quiz
 with st.expander("", expanded=True):
     st.write("""If you want, upload a picture from the internet of a wildfire (or something else) and see yourself if the model correctly 
