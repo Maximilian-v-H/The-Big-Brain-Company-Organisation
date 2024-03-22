@@ -1,5 +1,13 @@
 version: '3'
 services:
+  solara:
+    build: ./streamlit_frontend
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - $SOLARA_LOCAL_PORT:$SOLARA_DOCKER_PORT
+    environment:
+      - PORT=$SOLARA_DOCKER_PORT
   streamlit:
     build: ./streamlit_frontend
     restart: unless-stopped
@@ -8,33 +16,33 @@ services:
       - $STREAMLIT_LOCAL_PORT:$STREAMLIT_DOCKER_PORT
     environment:
       - PORT=$STREAMLIT_DOCKER_PORT
-  ai_api:
-    depends_on:
-      - mongodb
-    build: ./ai-api
-    restart: unless-stopped
-    env_file: ./.env
-    ports:
-      - $AI_LOCAL_PORT:$AI_DOCKER_PORT
-    environment:
-      - PORT=$AI_DOCKER_PORT
-      - DB_HOST=mongodb
-      - DB_USER=$MONGODB_USER
-      - DB_PASSWORD=$MONGODB_PASSWORD
-      - DB_NAME=$MONGODB_DATABASE
-      - DB_PORT=$MONGODB_DOCKER_PORT
-    stdin_open: true
-    tty: true
-  mongodb:
-    image: mongodb/mongodb-community-server
-    restart: unless-stopped
-    env_file: ./.env
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=$MONGODB_USER
-      - MONGO_INITDB_ROOT_PASSWORD=$MONGODB_PASSWORD
-    ports:
-      - $MONGODB_LOCAL_PORT:$MONGODB_DOCKER_PORT
-    volumes:
-      - type: bind
-        source: ./mongo-db
-        target: /data/db
+  # ai_api:
+  #   depends_on:
+  #     - mongodb
+  #   build: ./ai-api
+  #   restart: unless-stopped
+  #   env_file: ./.env
+  #   ports:
+  #     - $AI_LOCAL_PORT:$AI_DOCKER_PORT
+  #   environment:
+  #     - PORT=$AI_DOCKER_PORT
+  #     - DB_HOST=mongodb
+  #     - DB_USER=$MONGODB_USER
+  #     - DB_PASSWORD=$MONGODB_PASSWORD
+  #     - DB_NAME=$MONGODB_DATABASE
+  #     - DB_PORT=$MONGODB_DOCKER_PORT
+  #   stdin_open: true
+  #   tty: true
+  # mongodb:
+  #   image: mongodb/mongodb-community-server
+  #   restart: unless-stopped
+  #   env_file: ./.env
+  #   environment:
+  #     - MONGO_INITDB_ROOT_USERNAME=$MONGODB_USER
+  #     - MONGO_INITDB_ROOT_PASSWORD=$MONGODB_PASSWORD
+  #   ports:
+  #     - $MONGODB_LOCAL_PORT:$MONGODB_DOCKER_PORT
+  #   volumes:
+  #     - type: bind
+  #       source: ./mongo-db
+  #       target: /data/db

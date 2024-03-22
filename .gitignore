@@ -48,4 +48,4 @@ app.*.map.json
 # mongo db
 mongo-db/journal
 mongo-db/diagnostic.data
-/streamlit_frontend/starthack-417820-456004745901.json
+starthack-417820-456004745901.json
