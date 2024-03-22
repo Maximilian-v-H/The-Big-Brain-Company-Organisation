@@ -72,6 +72,7 @@ with tab1:
 
     # Add the custom legend to the map
     Map.add_legend(title="Burnt Area Heatmap from 2002-2020", legend_dict=legend_dict)
+
     Map.to_streamlit()
 
 with tab2:
@@ -109,6 +110,16 @@ with tab2:
             unsafe_allow_html=True,
         )
 
+        file2 = open("assets/legend.png", "rb")
+        contents2 = file2.read()
+        data_url2 = base64.b64encode(contents2).decode("utf-8")
+        file2.close()
+
+        st.markdown(
+            f'<img src="data:image/png;base64,{data_url2}" alt="legend" width="220" height="400" >',
+            unsafe_allow_html=True,
+        )
+
 with tab3:
     # displaay image
     st.markdown("*The danger of fire to protected areas and conservation work*")
@@ -121,6 +132,12 @@ with tab3:
     contents2 = img2_.read()
     data_url2 = base64.b64encode(contents2).decode("utf-8")
     img2_.close()
+
+    st.markdown("""
+    Yellow areas: Protected areas\n
+    Red areas: Areas affected by wildfires\n
+    Almost all of the protected areas have been affected by wildfires. This is a major concern and threat for conservation efforts in Brazil.
+                """)
 
     # use button to switch between images
     show_all = st.toggle("Show only areas affected by fire", False)
